@@ -1,0 +1,89 @@
+﻿<Window x:Class="Hackathon2017.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hackathon2017"
+        xmlns:wpf="clr-namespace:Tobii.Interaction.Wpf;assembly=Tobii.Interaction.Net"
+        mc:Ignorable="d"
+        Title="Settings" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="SettingsButton" TargetType="Button">
+                <Setter Property="Width" Value="150" />
+                <Setter Property="Height" Value="150" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="Background" Value="LightGray" />
+            </Style>
+            <Style x:Key="GazeAwareSettingsContent" TargetType="Grid">
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="Width" Value="100" />
+                <Setter Property="Height" Value="100" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="wpf:Behaviors.IsGazeAware" Value="True" />
+                <Setter Property="wpf:Behaviors.HasGazeChangedCommand" Value="{Binding SettingElementHasGazeChangedCommand}" />
+            </Style>
+            <Style x:Key="SettingsText" TargetType="TextBlock">
+                <Setter Property="TextAlignment" Value="Justify" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Foreground" Value="DarkBlue" />
+                <Setter Property="FontSize" Value="12pt" />
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <WrapPanel Margin="200, 100" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Style="{StaticResource SettingsButton}">
+                <Grid Style="{StaticResource GazeAwareSettingsContent}">
+                    <TextBlock Text="System" Style="{StaticResource SettingsText}" />
+                </Grid>
+            </Button>
+            <Button Style="{StaticResource SettingsButton}">
+                <Grid Style="{StaticResource GazeAwareSettingsContent}">
+                    <TextBlock Text="Devices" Style="{StaticResource SettingsText}" />
+                </Grid>
+            </Button>
+            <Button Style="{StaticResource SettingsButton}">
+                <Grid Style="{StaticResource GazeAwareSettingsContent}">
+                    <TextBlock Text="Network &amp; Internet" Style="{StaticResource SettingsText}" />
+                </Grid>
+            </Button>
+            <Button Style="{StaticResource SettingsButton}">
+                <Grid Style="{StaticResource GazeAwareSettingsContent}">
+                    <TextBlock Text="Personalization" Style="{StaticResource SettingsText}" />
+                </Grid>
+            </Button>
+            <Button Style="{StaticResource SettingsButton}">
+                <Grid Style="{StaticResource GazeAwareSettingsContent}">
+                    <TextBlock Text="Accounts" Style="{StaticResource SettingsText}" />
+                </Grid>
+            </Button>
+            <Button Style="{StaticResource SettingsButton}">
+                <Grid Style="{StaticResource GazeAwareSettingsContent}">
+                    <TextBlock Text="Time &amp; Language" Style="{StaticResource SettingsText}" />
+                </Grid>
+            </Button>
+            <Button Style="{StaticResource SettingsButton}">
+                <Grid Style="{StaticResource GazeAwareSettingsContent}">
+                    <TextBlock Text="Ease of access" Style="{StaticResource SettingsText}" />
+                </Grid>
+            </Button>
+            <Button Style="{StaticResource SettingsButton}">
+                <Grid Style="{StaticResource GazeAwareSettingsContent}">
+                    <TextBlock Text="Privacy" Style="{StaticResource SettingsText}" />
+                </Grid>
+            </Button>
+            <Button Style="{StaticResource SettingsButton}">
+                <Grid Style="{StaticResource GazeAwareSettingsContent}">
+                    <TextBlock Text="Update &amp; Security" Style="{StaticResource SettingsText}" />
+                </Grid>
+            </Button>
+        </WrapPanel>
+    </Grid>
+</Window>
